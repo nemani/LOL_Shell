@@ -1,8 +1,8 @@
 #include "lol_shell.h"
 
-// char *builtin_function_names[] = { "nightswatch", "cd", "pwd", "ls", "echo", "exit", "pinfo"};
-// int count_of_inbuild_commands = 7;
-// int (*builtin_function_pointers[]) (int, char **) = { &lols_nightswatch, &lols_cd, &lols_pwd, &lols_ls, &lols_echo, &lols_exit, &lols_pinfo};
+char *builtin_function_names[] = { "builtin", "nightswatch", "cd", "pwd", "echo", "exit", "pinfo"};
+int count_of_inbuild_commands = 7;
+int (*builtin_function_pointers[]) (int, char **) = { &lols_builtin, &lols_nightswatch, &lols_cd, &lols_pwd, &lols_echo, &lols_exit, &lols_pinfo};
 
 int main(int argc, char const *argv[]){
 	getcwd(home, sizeof(home));

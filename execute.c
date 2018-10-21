@@ -83,14 +83,13 @@ int builtin_or_execute(char **args){
 		return 1;
 	}
 
-	// char* main_command = args[0];
-	// int i = 0;
+	char* main_command = args[0];
 
-	// for (i = 0; i < count_of_inbuild_commands; ++i){
-	// 	if (strcmp(main_command, builtin_function_names[i]) == 0){ // if main_command is in builtin command list
-	// 		return (*builtin_function_pointers[i])(argc, args); // Call the builtin function
-	// 	}
-	// }
+	for (int i = 0; i < count_of_inbuild_commands; ++i){
+		if (strcmp(main_command, builtin_function_names[i]) == 0){ // if main_command is in builtin command list
+			return (*builtin_function_pointers[i])(argc, args); // Call the builtin function
+		}
+	}
 
 	return execute(redirect, argc, args);
 }
