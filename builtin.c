@@ -9,7 +9,6 @@ int lols_cd (int argc, char** args) {
 		int k = chdir(args[1]);
 		if (k < 0){
 			perror("cd : Error");
-			return 0;
 		}
 	}
 	return 1;
